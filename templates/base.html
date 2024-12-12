@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auth Service</title>
+    <script src="https://unpkg.com/htmx.org"></script>
+</head>
+<body>
+<header>
+    <h1>Auth Service</h1>
+    <nav>
+        <a href="/register">Register</a>
+        <a href="/login">Login</a>
+        <a href="/profile">Profile</a>
+        <a href="/admin">Admin</a>
+    </nav>
+</header>
+<main>
+    {{template "content" .}}
+</main>
+<footer>
+    <p>&copy; 2023 Auth Service</p>
+</footer>
+</body>
+</html>

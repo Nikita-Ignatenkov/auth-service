@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Profile</title>
+    <script src="https://unpkg.com/htmx.org@1.6.1"></script>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+<div class="container">
+    <h2>User Profile</h2>
+    <p>Name: {{ .Name }}</p>
+    <p>Email: {{ .Email }}</p>
+    <a href="#" hx-get="/api/change-password" hx-target="#password-change-form" hx-swap="outerHTML">Change Password</a>
+    <div id="password-change-form" style="display:none;">
+        <form hx-put="/api/change-password" hx-target="#response" hx-swap="innerHTML">
+            <label for="current_password">Current Password:</label>
+            <input type="password" id="current_password" name="current_password" required><br>
+
+            <label for="new_password">New Password:</label>
+            <input type="password" id="new_password" name="new_password" required><br>
+
+            <button type="submit">Change Password</button>
+        </form>
+        <div id="response"></div>
+    </div>
+</div>
+</body>
+</html>
